@@ -1,7 +1,7 @@
 version: '2'
 services:
   webapp:
-    image: pydevlab/testbuild:latest
+    image: pydevlab/caesar_cipher:latest
     ports:
       - "80:8000"
     restart: always
