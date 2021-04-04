@@ -1,6 +1,6 @@
 pipeline {
   environment {
-      registry = "pydevlab/testbuild"
+      registry = "pydevlab/caesar_cipher"
       registryCredential = 'dockerhub-cred'
       dockerImage = ''
   }
@@ -8,7 +8,7 @@ pipeline {
   stages {
       stage('Cloning git repository') {
           steps {
-              git branch: 'main', url: 'https://github.com/pydevlab/homework12.git'
+              git branch: 'main', url: 'https://github.com/pydevlab/caesar_cipher.git'
           }
       }
       stage('Building image') {
@@ -23,8 +23,7 @@ pipeline {
               script {
                   docker.withRegistry( '', registryCredential ) {
                       dockerImage.push()
-					  dockerImage.push('latest')
- 
+		      dockerImage.push('latest') 
                   }
               }
           }
