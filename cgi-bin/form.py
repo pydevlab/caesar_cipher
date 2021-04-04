@@ -9,7 +9,7 @@ form = cgi.FieldStorage()
 message = form.getfirst("str_to_encode", "не задано")
 key = form.getfirst("keydigit", "не задано")
 
-if (key == "не задано") OR (message == "не задано"):
+if (key == "не задано") or (message == "не задано"):
     print("Content-type: text/html\n")
     print("""<!DOCTYPE HTML>
             <html>
