@@ -9,6 +9,19 @@ form = cgi.FieldStorage()
 message = form.getfirst("str_to_encode", "не задано")
 key = form.getfirst("keydigit", "не задано")
 
+if (key == "не задано") OR (message == "не задано"):
+    print("Content-type: text/html\n")
+    print("""<!DOCTYPE HTML>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Лаборатория шифрования PyDevLab</title>
+            </head>
+            <body>""")
+    print("""<h3><p>Ошибка! Вы не заполнили все поля. Вернитесь <a href="../index.html">назад</a> и попробуйте заново.</p></h3>""")
+    print("""</body></html>""")
+    exit()
+
 alphabet = '0123456789abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 message = message.lower()
 check = check_message(message)
