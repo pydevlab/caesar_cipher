@@ -9,7 +9,7 @@ form = cgi.FieldStorage()
 message = form.getfirst("str_to_encode", "не задано")
 key = form.getfirst("keydigit", "не задано")
 
-if (key == "не задано") OR (message == "не задано"):
+if (key is None) OR (message is None):
     print("Content-type: text/html\n")
     print("""<!DOCTYPE HTML>
             <html>
@@ -21,6 +21,8 @@ if (key == "не задано") OR (message == "не задано"):
     print("""<h3><p>Ошибка! Вы не заполнили все поля. Вернитесь <a href="../index.html">назад</a> и попробуйте заново.</p></h3>""")
     print("""</body></html>""")
     exit()
+else:
+    pass
 
 alphabet = '0123456789abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 message = message.lower()
