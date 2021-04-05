@@ -16,7 +16,8 @@
 -docker-compose.yml # деплой приложения в оркестраторе <br>
 -Jenkinsfile # скрипт пайплайна по сборке приложения в Jenkins <br>
 -ansible_playbook # плейбук для ansible <br>
--README.md # описание приложения <br>
+-screenshots # скриншоты приложения <br>
+-README.md # описание приложения и отчет ВКР <br>
 <br>
 <b>Как пользоваться приложением:</b><br>
 <b>Для шифровки:</b><br>
